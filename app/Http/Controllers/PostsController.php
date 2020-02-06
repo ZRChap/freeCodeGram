@@ -7,13 +7,16 @@ use Intervention\Image\Facades\Image;
 
 class PostsController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('auth');
     }
+
     public function create()
     {
-        return view('posts.create');
+        return view('posts/create');
+
     }
 
     public function store()
@@ -39,6 +42,6 @@ class PostsController extends Controller
 
     public function show(\App\Post $post)
     {
-        return view('posts.show', compact('post'));
+        return view('posts/show', compact('post'));
     }
 }
